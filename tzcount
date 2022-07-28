@@ -1,28 +1,14 @@
 #!/usr/bin/python3
 
-#import subprocess
 import sys
-#output = subprocess.run(["git", "log"], stdout=subprocess.PIPE)
-
-#log = output.stdout.decode('utf-8')
-
-#words = log.split('\n')
-
-#words = a.split(' ')
-
 
 words = sys.stdin
-#print(words)
+
 words2 = []
-#for line in range(len(words)):
-    #words2.append(words[i].split(' '))
-#print(words2)
 
 for line in sys.stdin:
     words2.append(line.split(' '))
-    
-#print(words2)
-
+   
 class timezones:
     def __init__(self, name):
         self.name = name
@@ -52,14 +38,11 @@ for i in range(len(zones)):
         found.append(a)
     else:
         for j in range(len(found)):
-            #print('b')
             if zones[i] == found[j].name:
-                #print('c')
                 found[j].count = found[j].count + 1
                 added = True
                 break
         if added == False:
-            #print('d')
             a = timezones(zones[i])
             found.append(a)
             added = True
@@ -92,7 +75,6 @@ for i in positives:
 found = negatives + positives
 
 for i in found:
-    #print(i)
     print(i.name.replace('\n', '') + ' ' + str(i.count))
 #count amt of zones
 
